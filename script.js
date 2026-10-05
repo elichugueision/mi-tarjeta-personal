@@ -15,3 +15,22 @@ formulario.addEventListener(`submit`, function(event) {
     respuesta.textContent = `¡Gracias por tu mensaje, ${nombre}! Me pondré en contacto contigo pronto`;
     formulario.reset();
 });
+
+const btnTheme = document.getElementById(`toggle-theme`);
+
+const temaGuardado = localStorage.getItem(`tema`);
+
+if (temaGuardado === `oscuro`){
+    document.body.classList.add(`dark-mode`);
+    btnTheme.Theme.textContent = `☀️ Modo Claro`;
+}
+
+btnTheme.addEventListener(`click`, function() {
+    document.body.classList.toggle(`dark-mode`);
+
+    if (document.body.classList.contains(`dark-mode`)){
+    } else {
+        btnTheme.textContent = `🌙 Modo Oscuro`;
+        localStorage.setItem(`tema`, `claro`);
+    }
+});

@@ -1,16 +1,34 @@
+/* Variables para cambiar los colores dinámicamente */
+:root {
+    --bg-color: #f4f4f9;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --title-color: #2c3e50;
+    --border-color: #ccc;
+}
+
+/* Colores para el Modo Oscuro */
+body.dark-mode {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --title-color: #ecf0f1;
+    --border-color: #444;
+}
 body{
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 h1{
-    color: #2c3e50;
+    color: var(--title-color);
 }
 h2{
-    color: #34495e;
-    border-bottom: 2px solid #2c3e50;
+    color: var(--title-color);
+    border-bottom: 2px solid var(--title-color);
     padding-bottom: 5px;
 }
 
@@ -28,13 +46,18 @@ a{
 a:hover{
     text-decoration: underline;
 }
-
-input:focus, textarea:focus{
+input, textarea {
     width: 100%;
     box-sizing: border-box;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3498db;
 }
 
 button{
@@ -53,10 +76,11 @@ button:hover{
 .tarjeta{
     max-width: 500px;
     margin: 40px auto;
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
 }
 
 .perfil-contenedor{
@@ -82,4 +106,18 @@ form{
     font-weight: bold;
     margin-top: 15px;
     text-align: center;
+}
+.btn-theme {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    float: right;
+    font-size: 0.9rem;
+}
+
+.btn-theme:hover {
+    background-color: var(--border-color);
 }

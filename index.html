@@ -1,43 +1,62 @@
 <!DOCTYPE html>
- <html lang="es">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width", initial-scale="1.0"
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mi Primera Página Web</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="tarjeta">
-            <button id="toggle-theme" class=""btn.theme">🌙 Modo Oscuro</button>
-        <h1>Mi perfil personal</h1>
-        <p>He decidido hacer un cambio en mi carrera profesional por eso he decidido aprender programación</p>
+            <button id="toggle-theme" class="btn-theme">🌙 Modo Oscuro</button>
 
-        <h2>Mis pasatiempos e intereses</h2>
-        <ul>
-            <li>Los coches</li>
-            <li>Los videojuegos</li>
-            <li>Salir con amigos</li>
-        </ul>
-        <h2>Sobre mí</h2>
-        <div class="perfil-contenedor">
-        <img src="https://picsum.photos/200/200" alt="Foto de perfil de prueba">
-        <a href="https://www.google.com" target="_blank">Visitar mi buscador favorito</a> 
-        </div>
-        <h2>Contacto</h2>   
-        <form>
-            <div class="campo-grupo"> 
-            <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
+            <h1>Mi perfil personal</h1>
+            <p>He decidido hacer un cambio en mi carrera profesional por eso he decidido aprender programación.</p>
+
+            <div class="perfil-contenedor">
+                <img src="https://picsum.photos/200/200" alt="Foto de perfil de prueba">
+                <a href="https://www.google.com" target="_blank">Visitar mi buscador favorito</a> 
             </div>
 
-            <div class="campo-grupo">
-            <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje"></textarea>
-            </div>
-            <button type="submit">Enviar</button>
-            <p id="mensaje-exito" class="mensaje-oculto"></p>
-        </form>
+            <h2>Mis pasatiempos e intereses</h2>
+            <ul>
+                <li>Los coches</li>
+                <li>Los videojuegos</li>
+                <li>Salir con amigos</li>
+            </ul>
+
+            <!-- Sección de Habilidades -->
+            <section class="habilidades">
+                <h2>Habilidades</h2>
+                <div class="skills-contenedor">
+                    <span class="skill">HTML5</span>
+                    <span class="skill">CSS3</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Git & GitHub</span>
+                    <span class="skill">Responsive Design</span>
+                </div>
+            </section>
+
+            <!-- Sección de Contacto -->
+            <section>
+                <h2>Contacto</h2>
+                <form> 
+                    <div class="campo-grupo"> 
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre">
+                    </div>
+
+                    <div class="campo-grupo">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje"></textarea>
+                    </div>
+                    
+                    <button type="submit">Enviar</button>
+                    <p id="mensaje-exito" class="mensaje-oculto"></p>
+                </form>
+            </section>
         </div>
+
         <script src="script.js"></script>
     </body>
- </html>
+</html>

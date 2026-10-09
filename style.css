@@ -139,3 +139,29 @@ form{
         margin: 0 auto 15px auto;
     }
 }
+/* Estilos para la sección de Habilidades */
+.habilidades {
+    margin-top: 25px;
+}
+
+.skills-contenedor {
+    display: flex;
+    flex-wrap: wrap; /* Si no caben en una línea, pasan a la siguiente */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skill {
+    background-color: var(--title-color);
+    color: var(--card-bg);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-2px); /* Efecto leve de elevación al pasar el ratón */
+}

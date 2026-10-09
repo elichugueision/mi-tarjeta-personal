@@ -121,3 +121,21 @@ form{
 .btn-theme:hover {
     background-color: var(--border-color);
 }
+/* Adaptación para pantallas de móvil */
+@media (max-width: 600px) {
+    .tarjeta {
+        margin: 10px auto;
+        padding: 20px;
+    }
+
+    .perfil-contenedor {
+        flex-direction: column; /* Apila foto y texto en vertical */
+        text-align: center;
+    }
+
+    .btn-theme {
+        float: none;
+        display: block;
+        margin: 0 auto 15px auto;
+    }
+}

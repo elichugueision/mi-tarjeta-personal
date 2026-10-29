@@ -16,21 +16,36 @@ formulario.addEventListener(`submit`, function(event) {
     formulario.reset();
 });
 
-const btnTheme = document.getElementById(`toggle-theme`);
+const btnTheme = document.getElementById('toggle-theme');
 
-const temaGuardado = localStorage.getItem(`tema`);
-
-if (temaGuardado === `oscuro`){
-    document.body.classList.add(`dark-mode`);
-    btnTheme.Theme.textContent = `☀️ Modo Claro`;
+// Función para actualizar el texto del botón según el tema activo
+function actualizarTextoBoton() {
+    if (document.body.classList.contains('dark-mode')) {
+        btnTheme.textContent = '☀️ Modo Claro';
+    } else {
+        btnTheme.textContent = '🌙 Modo Oscuro';
+    }
 }
 
-btnTheme.addEventListener(`click`, function() {
-    document.body.classList.toggle(`dark-mode`);
+// 1. Al cargar la página, comprobar si el usuario ya tenía el modo oscuro guardado
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+}
 
-    if (document.body.classList.contains(`dark-mode`)){
+// Actualizar el texto inicial del botón según lo que se haya cargado
+actualizarTextoBoton();
+
+// 2. Evento para cambiar de tema al hacer clic en el botón
+btnTheme.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Guardar la preferencia en localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
     } else {
-        btnTheme.textContent = `🌙 Modo Oscuro`;
-        localStorage.setItem(`tema`, `claro`);
+        localStorage.setItem('theme', 'light');
     }
+
+    // Actualizar el texto del botón inmediatamente
+    actualizarTextoBoton();
 });
